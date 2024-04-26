@@ -3,19 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './admin/layout/layout.component';
 import { DashboardModule } from './admin/components/dashboard/dashboard.module';
 import { HomeComponent } from './ui/components/home/home.component';
+import { AuthGuard } from './guards/common/auth.guard';
 
 const routes: Routes = [
 {path:"admin",component:LayoutComponent, children: [
   {path:"dashboard", loadChildren:()=>import("./admin/components/dashboard/dashboard.module").then 
-  (module => module.DashboardModule)},
+  (module => module.DashboardModule), canActivate: [AuthGuard]},
   {path:"customer", loadChildren:()=>import("./admin/components/customer/customer.module").then 
-  (module => module.CustomerModule)},
+  (module => module.CustomerModule), canActivate: [AuthGuard]},
   {path:"products", loadChildren:()=>import("./admin/components/products/products.module").then 
-  (module => module.ProductsModule)},
+  (module => module.ProductsModule), canActivate: [AuthGuard]},
   {path:"order", loadChildren:()=>import("./admin/components/order/order.module").then 
-  (module => module.OrderModule)},
-
-]},
+  (module => module.OrderModule), canActivate: [AuthGuard]},
+  ], canActivate: [AuthGuard]
+},
 
 {path:"",component: HomeComponent},
 {path:"baskets", loadChildren:()=>import("./ui/components/baskets/baskets.module").then 
