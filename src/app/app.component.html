@@ -18,13 +18,16 @@
             <a class="nav-link active" aria-current="page"routerLink="baskets">Sepet</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page"routerLink="register">Kayıt Ol</a>
+            <a class="nav-link active" aria-current="page"routerLink="register" *ngIf="!authService.isAuthenticated">Kayıt Ol</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page"routerLink="login">Giriş Yap</a>
+            <a class="nav-link active" aria-current="page"routerLink="login" *ngIf="!authService.isAuthenticated">Giriş Yap</a>
           </li>
+            <li>
+              <a class="nav-link active" aria-current="page" style="color:red;cursor:pointer;" (click)="signOut()" *ngIf="authService.isAuthenticated">Çıkış Yap</a>
+            </li>
           <li class="nav-item">
-            <a class="btn btn-outline-success" aria-current="page"routerLink="admin">Yönetim Paneli</a>
+            <a class="btn btn-outline-success" aria-current="page"routerLink="admin" *ngIf="authService.isAuthenticated">Yönetim Paneli</a>
           </li>
 
           <li class="nav-item dropdown">
