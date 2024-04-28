@@ -50,11 +50,11 @@ import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonDirective
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider("347267065390-bvt5f2a76dk1i1lpe0kmlcf8mckv63ah.apps.googleusercontent.com") // googleclientid
+            provider: new GoogleLoginProvider("") // googleclientid
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider("7838164802871377") //facebookloginappid
+            provider: new FacebookLoginProvider("") //facebookloginappid
           }
         ],
         onError: err => console.log(err)
