@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { BaseComponent } from 'src/app/base/base.component';
 import { CreateUser } from 'src/app/contracts/users/create_user';
@@ -14,13 +14,13 @@ import { CustomToastrService, ToastrMessageType, ToastrPosition } from 'src/app/
 })
 export class RegisterComponent extends BaseComponent implements OnInit {
 
-  constructor(private formBuiler:FormBuilder, private userService:UserService,
+  constructor(private formBuiler:UntypedFormBuilder, private userService:UserService,
     private toastrService:CustomToastrService, spinner:NgxSpinnerService
   ) {
     super(spinner)
    }
 
-  frm:FormGroup;
+  frm:UntypedFormGroup;
   ngOnInit(): void {
 
     this.frm = this.formBuiler.group({
