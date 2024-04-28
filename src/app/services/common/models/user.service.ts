@@ -57,12 +57,33 @@ export class UserService {
     if(tokenResponse)
       localStorage.setItem("accessToken", tokenResponse.token.accessToken);
 
-    this.toastrService.message("Google üzerinden  Girişi Başarılı","Giriş Başarılı", {
+    this.toastrService.message("Google üzerinden giriş başarılı bir şekilde sağlanmıştır.","Giriş Başarılı", {
       messageType: ToastrMessageType.Success,
       position:ToastrPosition.BottomRight
     });
     callBackFunction();
   }
+
+  async facebookLogin(user:SocialUser, callBackFunction?: () => void) : Promise<any> {
+    const observable: Observable<SocialUser | TokenResponse> =     this.httpClientService.post<SocialUser |TokenResponse> ({
+    action:"facebook-login",
+    controller:"users"
+  }, user);
+
+  const tokenResponse: TokenResponse = await firstValueFrom(observable) as TokenResponse;
+  if(tokenResponse)
+    localStorage.setItem("accessToken", tokenResponse.token.accessToken);
+
+  this.toastrService.message("Facebook üzerinden  giriş başarılı bir şekilde sağlanmıştır.","Giriş Başarılı", {
+    messageType: ToastrMessageType.Success,
+    position:ToastrPosition.BottomRight
+  });
+  callBackFunction();
+}
+
+  
+
+
   
 
 
