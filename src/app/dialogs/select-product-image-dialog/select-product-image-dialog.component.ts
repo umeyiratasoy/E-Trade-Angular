@@ -47,6 +47,7 @@ export class SelectProductImageDialogComponent extends BaseDialog<SelectProductI
     this.spinner.show(SpinnerType.BallAtom);
     this.images = await this.productService.readImages(this.data  as string, () => this.spinner.hide(SpinnerType.BallAtom));
   }
+  
 
   async deleteImage(imageId: string, event: any) {
     this.dialogService.openDialog({
@@ -66,10 +67,19 @@ export class SelectProductImageDialogComponent extends BaseDialog<SelectProductI
       })
     }
     });
-
-
   }
+  
+  showCase(imageId: string) {
+    this.spinner.show(SpinnerType.BallAtom);
+
+    this.productService.changeShowcaseImage(imageId, this.data as string, () => {
+      this.spinner.hide(SpinnerType.BallAtom);
+    });
+  }
+  
 }
+
+
 
 export enum SelectProductImageState {
   Close

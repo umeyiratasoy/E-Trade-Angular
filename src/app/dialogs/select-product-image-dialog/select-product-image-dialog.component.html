@@ -5,8 +5,8 @@
 
     <mat-card class="product-image-card"  *ngFor="let images of images">
         <mat-card-header>
-
-        </mat-card-header>
+          <input type="radio" name="img" (click)="showCase(images.id)"  />
+                </mat-card-header>
         <img mat-card-image [src]="images.path">
         <mat-card-content>
 
