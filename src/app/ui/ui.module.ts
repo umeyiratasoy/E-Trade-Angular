@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './components/components.module';
 import { RouterModule } from '@angular/router';
@@ -11,6 +11,9 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     ComponentsModule,
     
+  ],
+  exports:[
+    ComponentsModule
   ]
 })
 export class UiModule { }
