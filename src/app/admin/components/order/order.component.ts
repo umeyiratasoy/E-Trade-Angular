@@ -19,18 +19,5 @@ export class OrderComponent extends BaseComponent implements OnInit {
   }
   
 
-  m() {
-    this.alertify.message("Merhaba", {
-      messageType: MessageType.Error,
-      delay:5,
-      position: Position.BottomRight,
-
-       
-    });
-  }
-  d() {
-    this.alertify.dismiss();
-  }
-
 }
  
