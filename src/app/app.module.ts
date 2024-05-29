@@ -54,11 +54,11 @@ import { DynamicLoadComponentDirective } from './directives/common/dynamic-load-
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider("") // googleclientid
+            provider: new GoogleLoginProvider("123") // googleclientid example:123
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider("") //facebookloginappid
+            provider: new FacebookLoginProvider("123") //facebookloginappid example:123
           }
         ],
         onError: err => console.log(err)
