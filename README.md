@@ -52,6 +52,6 @@ Projenin backend-asp.net core 6 kısmını aşağıdaki bağlantıya giderek inc
 
 YBS Bitirme Projesi için yapılmıştır sunum raporuna aşağıdaki bağlantıdan ulaşabilirsiniz.
 <br>
-<a href="x" target="_blank">Bağlantı </a>
+<a href="https://github.com/umeyiratasoy/E-Trade-Asp.NETCore/tree/main/Docs" target="_blank">Bağlantı </a>
 
 
